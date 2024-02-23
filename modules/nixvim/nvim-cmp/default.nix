@@ -1,7 +1,23 @@
 {pkgs, ...}: {
-  extraPlugins = with pkgs.vimPlugins; [
-    luasnip
-  ];
+  #extraPlugins = with pkgs.vimPlugins; [
+  #  luasnip
+  #];
+  plugins.luasnip = {
+    enable = true;
+    extraConfig = {
+      enable_autosnippets = true;
+      store_selection_keys = "<Tab>";
+    };
+    fromVscode = [
+      {
+        lazyLoad = true;
+        paths = "${pkgs.vimPlugins.friendly-snippets}";
+      }
+    ];
+  };
+  extraConfigLua = ''
+    luasnip = require("luasnip")
+  '';
 
   plugins = {
     cmp-nvim-lsp = {enable = true;}; # lsp
@@ -46,41 +62,58 @@
           priority = 2;
         }
       ];
-
       mapping = {
-        "<C-Space>" = "cmp.mapping.complete()";
-        "<C-j>" = "cmp.mapping.scroll_docs(4)";
-        "<C-k>" = "cmp.mapping.scroll_docs(-4)";
-        "<C-l>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
-        "<C-n>" = {
+        "<Tab>" = {
+          modes = ["i" "s"];
           action = ''
             function(fallback)
               if cmp.visible() then
-                cmp.select_next_item()
-              elseif require("luasnip").expand_or_jumpable() then
-                require("luasnip").expand_or_jump()
+            		cmp.select_next_item()
+              elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
               else
                 fallback()
+                    end
               end
-            end
           '';
-
-          modes = ["i" "s"];
         };
-        "<C-p>" = {
+        "<S-Tab>" = {
+          modes = ["i" "s"];
           action = ''
-            function(fallback)
-              if cmp.visible() then
-                cmp.select_prev_item()
-              elseif require("luasnip").expand_or_jumpable() then
-                require("luasnip").expand_or_jump()
-              else
-                fallback()
-              end
+                 function(fallback)
+            	if cmp.visible() then
+            		cmp.select_prev_item()
+            	elseif luasnip.jumpable(-1) then
+            		luasnip.jump(-1)
+            	else
+            		fallback()
+            	end
             end
           '';
-
-          modes = ["i" "s"];
+        };
+        "<C-j>" = {
+          action = "cmp.mapping.select_next_item()";
+        };
+        "<C-k>" = {
+          action = "cmp.mapping.select_prev_item()";
+        };
+        "<C-e>" = {
+          action = "cmp.mapping.abort()";
+        };
+        "<C-b>" = {
+          action = "cmp.mapping.scroll_docs(-4)";
+        };
+        "<C-f>" = {
+          action = "cmp.mapping.scroll_docs(4)";
+        };
+        "<C-Space>" = {
+          action = "cmp.mapping.complete()";
+        };
+        "<CR>" = {
+          action = "cmp.mapping.confirm({ select = true })";
+        };
+        "<S-CR>" = {
+          action = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
         };
       };
     };
