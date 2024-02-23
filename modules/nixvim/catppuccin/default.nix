@@ -12,4 +12,5 @@
     #borders = true;
     #contrast = true;
   };
+  highlight.NormalFloat.bg = "#11111b";
 }

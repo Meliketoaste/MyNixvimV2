@@ -4,6 +4,12 @@
   ];
 
   plugins = {
+    cmp-nvim-lsp = {enable = true;}; # lsp
+    cmp-buffer = {enable = true;};
+    copilot-cmp = {enable = true;}; # copilot suggestions
+    cmp-path = {enable = true;}; # file system paths
+    cmp_luasnip = {enable = true;}; # snippets
+    cmp-cmdline = {enable = false;}; # autocomplete for cmdline
     nvim-cmp = {
       enable = true;
 
