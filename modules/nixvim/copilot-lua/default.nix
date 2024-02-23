@@ -3,7 +3,7 @@ with lib.plusultra; {
   keymaps = [
     {
       mode = "n";
-      key = "<leader>oc";
+      key = "<leader>rc";
       action = "<cmd>:Copilot panel<cr>";
       options = {
         silent = true;

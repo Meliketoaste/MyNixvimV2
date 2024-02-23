@@ -8,6 +8,7 @@ with lib.plusultra;
 with theme.nord; {
   config = {
     extraConfigLua = ''
+      vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
       do
         local which_key = require("which-key")
 
@@ -104,7 +105,7 @@ with theme.nord; {
 
     options = {
       autoindent = true;
-      cursorline = true;
+      cursorline = false;
       tabstop = 2;
       shiftwidth = 2;
       wrap = true;

@@ -25,12 +25,6 @@ with lib.plusultra.theme.nord; {
     }
   '';
 
-  highlight = {
-    DashboardShortCut = {
-      fg = nord3;
-    };
-  };
-
   keymaps = [
     {
       mode = "n";

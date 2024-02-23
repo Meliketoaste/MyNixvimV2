@@ -1,33 +1,6 @@
 {lib, ...}:
 with lib.plusultra;
 with lib.plusultra.theme.nord; {
-  highlight = {
-    NormalFloat = {
-      fg = nord6;
-      bg = nord0;
-    };
-    FloatBorder = {
-      fg = nord6;
-      bg = nord0;
-    };
-
-    NoiceCmdlinePopupBorderSearch = {
-      fg = nord10;
-    };
-    NoiceCmdlineIconSearch = {
-      fg = nord10;
-    };
-
-    NoicePopupMenu = {
-      fg = nord6;
-      bg = nord0;
-    };
-    NoicePopupMenuBorder = {
-      fg = nord6;
-      bg = nord0;
-    };
-  };
-
   plugins = {
     noice = {
       enable = true;

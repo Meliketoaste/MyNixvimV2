@@ -21,8 +21,8 @@ with lib.plusultra; {
               D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },
               h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
               i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Go to implementation" },
-              n = { "<cmd>lua require('illuminate').next_reference{wrap=true}<cr>", "Go to next occurrence" },
-              p = { "<cmd>lua require('illuminate').next_reference{reverse=true,wrap=true}<cr>", "Go to previous occurrence" },
+              -- n = { "<cmd>lua require('illuminate').next_reference{wrap=true}<cr>", "Go to next occurrence" },
+              -- p = { "<cmd>lua require('illuminate').next_reference{reverse=true,wrap=true}<cr>", "Go to previous occurrence" },
               r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Go to references" },
               -- t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Go to type definition" },
               ["<C-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature help" }
