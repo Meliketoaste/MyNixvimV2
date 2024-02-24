@@ -17,11 +17,11 @@
 
     lsp = {
       servers = {
-        eslint = {
-          capabilities = {
-            # documentFormattingProvider = false;
-          };
-        };
+        #eslint = {
+        #  capabilities = {
+        #    # documentFormattingProvider = false;
+        #  };
+        #};
       };
     };
   };

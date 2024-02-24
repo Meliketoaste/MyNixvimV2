@@ -228,11 +228,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1708751719,
-        "narHash": "sha256-0uWOKSpXJXmXswOvDM5Vk3blB74apFB6rNGWV5IjoN0=",
+        "lastModified": 1708723535,
+        "narHash": "sha256-1z+3BHE9o1TfMpp7QAGAfu4+znaQv/47hIaV3n6HAuA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f63ce824cd2f036216eb5f637dfef31e1a03ee89",
+        "rev": "27c12cd057b9dcd903a0ffb6a0712199cf4a66e1",
         "type": "github"
       },
       "original": {
@@ -269,15 +269,16 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1706997840,
-        "narHash": "sha256-GbfTveveq/FNJ+xVcj1w3jW2ftsc8dmwxVS5vFehq+I=",
+        "lastModified": 1707010224,
+        "narHash": "sha256-1HTmGop2l8QSufw1wW1mMldWJDt5VstbdjGDgbvODJA=",
         "owner": "jakehamilton",
         "repo": "nixvim",
-        "rev": "81f54bcdd6f6a83372dce7723c83b8605769e9a5",
+        "rev": "eb67566293fdbdf06457922bb5da0ed7dd45b0b8",
         "type": "github"
       },
       "original": {
         "owner": "jakehamilton",
+        "ref": "dev",
         "repo": "nixvim",
         "type": "github"
       }
