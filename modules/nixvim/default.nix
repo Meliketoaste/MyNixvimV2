@@ -4,8 +4,7 @@
   pkgs,
   ...
 }:
-with lib.plusultra;
-with theme.nord; {
+with lib.plusultra; {
   config = {
     extraConfigLua = ''
       vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"

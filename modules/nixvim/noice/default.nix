@@ -1,6 +1,5 @@
 {lib, ...}:
-with lib.plusultra;
-with lib.plusultra.theme.nord; {
+with lib.plusultra; {
   plugins = {
     noice = {
       enable = true;

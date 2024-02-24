@@ -1,5 +1,4 @@
-{lib, ...}:
-with lib.plusultra.theme.nord; {
+{lib, ...}: {
   plugins = {
     rainbow-delimiters = {
       enable = true;
